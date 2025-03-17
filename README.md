@@ -64,6 +64,10 @@ The system is continuously evaluated based on:
 - **Response Time** – Ensuring recommendations are generated in **<2 seconds**.
 - **User Satisfaction** – Feedback-driven UI/UX improvements.
 
+## 🏆 Contributors
+- **Abdulwasii Luqman**
+- *Oluwatobiloba Famiwaye*
+
 ## 🤝 Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository
