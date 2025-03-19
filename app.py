@@ -1,17 +1,20 @@
 import streamlit as st
 import requests
 import pandas as pd
+from streamlit_geolocation import streamlit_geolocation
 
-# Streamlit app title
+# Get user location
 st.title("Sustainable Agriculture DSS 🌱")
-st.write("Enter your location (Latitude & Longitude) to get weather-based recommendations.")
+st.write("Fetching your location automatically...")
 
-# User input for latitude and longitude
-latitude = st.number_input("Enter Latitude", value=52.52, format="%.5f")
-longitude = st.number_input("Enter Longitude", value=13.41, format="%.5f")
+location = streamlit_geolocation()
 
-# Button to fetch weather data
-if st.button("Get Weather Data"):
+if location and "latitude" in location and "longitude" in location:
+    latitude = location["latitude"]
+    longitude = location["longitude"]
+
+    st.write(f"📍 Detected Location: **Lat:** {latitude}, **Lon:** {longitude}")
+
     # Fetch weather data from Open-Meteo
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,precipitation"
     
@@ -52,3 +55,5 @@ if st.button("Get Weather Data"):
 
     else:
         st.error("Failed to fetch weather data. Please try again.")
+else:
+    st.warning("⚠️ Please allow location access to fetch weather data.")
