@@ -40,7 +40,7 @@ cd sustainable-agri-dss
 ### 2️⃣ Install Dependencies
 
 ```sh
-pip install streamlit requests pandas numpy
+pip install streamlit requests pandas numpy streamlit-geolocation
 ```
 
 ### 3️⃣ Run the Application
@@ -83,7 +83,7 @@ The system is continuously evaluated based on:
 
 ## 🏆 Contributors
 
-- **Abdulwasii Luqman**
+- **Abdulwasii Luqman** - Developer and Maintainer
 - *Oluwatobiloba Famiwaye*
 
 ## 🤝 Contributing
@@ -97,7 +97,5 @@ Contributions are welcome! To contribute:
 5. Submit a Pull Request
 
 ## 📜 License
-
-## License
 
 MIT
